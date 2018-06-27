@@ -32,9 +32,7 @@ def processRequest(req):
     if req.get("result").get("action") != "Pokemon":
         return {}
 
-    req = requests.get('http://pokeapi.co/api/v2/pokemon/')
-    print("HTTP Status Code: " + str(req.status_code))
-    print(req.headers)
+    req = requests.get('http://pokeapi.co/api/v2/pokemon/5/')
     json_response = json.loads(req.content)
     print("Pokemon Name: " + json_response['name'])
     res = makeWebhookResult(data)
