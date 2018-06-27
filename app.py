@@ -29,7 +29,7 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("action") != "Pokemon":
+    if req.get("queryResult").get("action") != "Pokemon":
         return {}
 
     req = requests.get('http://pokeapi.co/api/v2/pokemon/5/')
