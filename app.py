@@ -32,7 +32,7 @@ def processRequest(req):
     if req.get("result").get("action") != "Pokemon":
         return {}
 
-    req = requests.get('http://pokeapi.co/api/v2/pokemon/1/')
+    req = requests.get('http://pokeapi.co/api/v2/pokemon/')
     print("HTTP Status Code: " + str(req.status_code))
     print(req.headers)
     json_response = json.loads(req.content)
