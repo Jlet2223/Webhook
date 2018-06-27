@@ -30,7 +30,7 @@ def webhook():
 
 
 def processRequest(req):
-    if req.get("queryResult").get("action") != "Pokemon":
+    if req.get("result").get("action") != "Pokemon":
         return {}
 
     req = requests.get('http://pokeapi.co/api/v2/pokemon/5/')
@@ -50,7 +50,7 @@ def makeWebhookResult(data):
         "speech": speech,
         "displayText": speech,
         # "contextOut": [],
-        "source": "pokeman"
+        "source": "Webhook"
     }
 
 
