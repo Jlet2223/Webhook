@@ -41,13 +41,6 @@ def processRequest(req):
 
 
 def makeWebhookResult(data):
-    query = data.get('name')
-    if query is None:
-        return {}
-
-
-    # print(json.dumps(item, indent=4))
-
     speech = query
     print("Response:")
     print(speech)
